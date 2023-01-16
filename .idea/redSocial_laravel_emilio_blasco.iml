@@ -1,7 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/rrss_emilio/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/rrss_emilio/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/rrss_emilio/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/rrss_emilio/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/spatie/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/spatie/laravel-ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/spatie/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/spatie/backtrace" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/fruitcake/php-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/pint" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/sanctum" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/sail" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/uid" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/nunomaduro/termwind" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/routing" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
