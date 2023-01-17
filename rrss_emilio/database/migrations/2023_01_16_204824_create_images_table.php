@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up(): void {
         Schema::create('images', function (Blueprint $table) {
-            $table->id('id_image');
+            $table->id();
             $table->unsignedBigInteger('id_user');
             $table->string('image_path');
             $table->string('description');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id_user')->on('users');
         });
     }
 

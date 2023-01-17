@@ -13,7 +13,8 @@
                     <div class="col-lg-6 col-xl-5">
                         <div class="text-container">
                             <h1>SaaS App HTML Landing Page</h1>
-                            <p class="p-large">Use Tivo to automate your marketing actions in order to reach a much larger audience</p>
+                            <p class="p-large">Use Tivo to automate your marketing actions in order
+                                to reach a much larger audience</p>
                             <a class="btn-solid-lg page-scroll" href="sign-up.blade.php">SIGN UP</a>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
@@ -29,7 +30,17 @@
             </div> <!-- end of container -->
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
-    <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><defs><style>.cls-1{fill:#5f4def;}</style></defs><title>header-frame</title><path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/></svg>
+    <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+         preserveAspectRatio="none" viewBox="0 0 1920 310">
+        <defs>
+            <style>.cls-1 {
+                    fill: #5f4def;
+                }</style>
+        </defs>
+        <title>header-frame</title>
+        <path class="cls-1"
+              d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/>
+    </svg>
     <!-- end of header -->
 
 
@@ -44,22 +55,28 @@
                         <div class="swiper-container image-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-1.png" alt="alternative">
+                                    <img class="img-fluid" src="images/customer-logo-1.png"
+                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-2.png" alt="alternative">
+                                    <img class="img-fluid" src="images/customer-logo-2.png"
+                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-3.png" alt="alternative">
+                                    <img class="img-fluid" src="images/customer-logo-3.png"
+                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-4.png" alt="alternative">
+                                    <img class="img-fluid" src="images/customer-logo-4.png"
+                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-5.png" alt="alternative">
+                                    <img class="img-fluid" src="images/customer-logo-5.png"
+                                         alt="alternative">
                                 </div>
                                 <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-6.png" alt="alternative">
+                                    <img class="img-fluid" src="images/customer-logo-6.png"
+                                         alt="alternative">
                                 </div>
                             </div> <!-- end of swiper-wrapper -->
                         </div> <!-- end of swiper container -->
@@ -78,48 +95,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="above-heading">DESCRIPTION</div>
-                    <h2 class="h2-heading">Marketing Automation Will Bring More Qualified Leads</h2>
+                    <div class="above-heading">Imágenes</div>
+                    <h2 class="h2-heading">Todas las imágenes</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
 
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="img-fluid" src="images/description-1.png" alt="alternative">
+                    @foreach($images as $image)
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="img-fluid" src="{{$image->image_path}}"
+                                     alt="alternative">
+                                <p>{{\App\Models\Like::all()->where
+                                        ('id_image', $image->id)->count()}}
+                                    likes</p>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{$image->description}}</h4>
+                                <p>{{$image->user->name}} {{$image->user->surname}}</p>
+                                <ul>
+                                    @foreach( \App\Models\Comment::all()->where('id_image',
+                                    $image->id) as $comment)
+                                        <li>{{$comment->content}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Lists Builder</h4>
-                            <p>It's very easy to start creating email lists for your marketing actions. Just create your Tivo account</p>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="img-fluid" src="images/description-2.png" alt="alternative">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Campaign Tracker</h4>
-                            <p>Campaigns is a feature we've developed since the beginning because it's at the core of Tivo's functionalities</p>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img class="img-fluid" src="images/description-3.png" alt="alternative">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Analytics Tool</h4>
-                            <p>Tivo collects customer data in order to help you analyse different situations and take required action</p>
-                        </div>
-                    </div>
-                    <!-- end of card -->
+                        <!-- end of card -->
+                    @endforeach
 
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -135,7 +140,9 @@
                 <div class="col-lg-12">
                     <div class="above-heading">FEATURES</div>
                     <h2 class="h2-heading">Marketing Automation</h2>
-                    <p class="p-heading">Take your business strategy to the next level and automatize your marketing tasks to save time for product development. Tivo can provide results in less than 2 weeks</p>
+                    <p class="p-heading">Take your business strategy to the next level and
+                        automatize your marketing tasks to save time for product development. Tivo
+                        can provide results in less than 2 weeks</p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -144,13 +151,19 @@
                     <!-- Tabs Links -->
                     <ul class="nav nav-tabs" id="argoTabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-list"></i>List Builder</a>
+                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab"
+                               href="#tab-1" role="tab" aria-controls="tab-1"
+                               aria-selected="true"><i class="fas fa-list"></i>List Builder</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-envelope-open-text"></i>Campaigns</a>
+                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2"
+                               role="tab" aria-controls="tab-2" aria-selected="false"><i
+                                    class="fas fa-envelope-open-text"></i>Campaigns</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-chart-bar"></i>Analytics</a>
+                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3"
+                               role="tab" aria-controls="tab-3" aria-selected="false"><i
+                                    class="fas fa-chart-bar"></i>Analytics</a>
                         </li>
                     </ul>
                     <!-- end of tabs links -->
@@ -159,32 +172,45 @@
                     <div class="tab-content" id="argoTabsContent">
 
                         <!-- Tab -->
-                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel"
+                             aria-labelledby="tab-1">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="image-container">
-                                        <img class="img-fluid" src="images/features-1.png" alt="alternative">
+                                        <img class="img-fluid" src="images/features-1.png"
+                                             alt="alternative">
                                     </div> <!-- end of image-container -->
                                 </div> <!-- end of col -->
                                 <div class="col-lg-6">
                                     <div class="text-container">
                                         <h3>List Building Is Easier Than Ever</h3>
-                                        <p>It's very easy to start using Tivo. You just need to fill out and submit the <a class="blue page-scroll" href="sign-up.blade.php">Sign Up Form</a> and you will receive access to the app and all of its features in no more than 24h.</p>
+                                        <p>It's very easy to start using Tivo. You just need to fill
+                                            out and submit the <a class="blue page-scroll"
+                                                                  href="sign-up.blade.php">Sign Up
+                                                Form</a> and you will receive access to the app and
+                                            all of its features in no more than 24h.</p>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Create and embed on websites newsletter sign up forms</div>
+                                                <div class="media-body">Create and embed on websites
+                                                    newsletter sign up forms
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Manage forms and landing pages for your services</div>
+                                                <div class="media-body">Manage forms and landing
+                                                    pages for your services
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Add and remove subscribers using the control panel</div>
+                                                <div class="media-body">Add and remove subscribers
+                                                    using the control panel
+                                                </div>
                                             </li>
                                         </ul>
-                                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">LIGHTBOX</a>
+                                        <a class="btn-solid-reg popup-with-move-anim"
+                                           href="#details-lightbox-1">LIGHTBOX</a>
                                     </div> <!-- end of text-container -->
                                 </div> <!-- end of col -->
                             </div> <!-- end of row -->
@@ -192,32 +218,44 @@
                         <!-- end of tab -->
 
                         <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel"
+                             aria-labelledby="tab-2">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="image-container">
-                                        <img class="img-fluid" src="images/features-2.png" alt="alternative">
+                                        <img class="img-fluid" src="images/features-2.png"
+                                             alt="alternative">
                                     </div> <!-- end of image-container -->
                                 </div> <!-- end of col -->
                                 <div class="col-lg-6">
                                     <div class="text-container">
                                         <h3>Campaigns Monitoring Tools</h3>
-                                        <p>Campaigns monitoring is a feature we've developed since the beginning because it's at the core of Tivo and basically to any marketing activity focused on results.</p>
+                                        <p>Campaigns monitoring is a feature we've developed since
+                                            the beginning because it's at the core of Tivo and
+                                            basically to any marketing activity focused on
+                                            results.</p>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Easily plan campaigns and schedule their starting date</div>
+                                                <div class="media-body">Easily plan campaigns and
+                                                    schedule their starting date
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Start campaigns and follow their evolution closely</div>
+                                                <div class="media-body">Start campaigns and follow
+                                                    their evolution closely
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Evaluate campaign results and optimize future actions</div>
+                                                <div class="media-body">Evaluate campaign results
+                                                    and optimize future actions
+                                                </div>
                                             </li>
                                         </ul>
-                                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-2">LIGHTBOX</a>
+                                        <a class="btn-solid-reg popup-with-move-anim"
+                                           href="#details-lightbox-2">LIGHTBOX</a>
                                     </div> <!-- end of text-container -->
                                 </div> <!-- end of col -->
                             </div> <!-- end of row -->
@@ -225,32 +263,44 @@
                         <!-- end of tab -->
 
                         <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel"
+                             aria-labelledby="tab-3">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="image-container">
-                                        <img class="img-fluid" src="images/features-3.png" alt="alternative">
+                                        <img class="img-fluid" src="images/features-3.png"
+                                             alt="alternative">
                                     </div> <!-- end of image-container -->
                                 </div> <!-- end of col -->
                                 <div class="col-lg-6">
                                     <div class="text-container">
                                         <h3>Analytics Control Panel</h3>
-                                        <p>Analytics control  panel is important for every marketing team so it's beed implemented from the begging and designed to produce reports based on very little input information.</p>
+                                        <p>Analytics control panel is important for every marketing
+                                            team so it's beed implemented from the begging and
+                                            designed to produce reports based on very little input
+                                            information.</p>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">If you set it up correctly you will get acces to great intel</div>
+                                                <div class="media-body">If you set it up correctly
+                                                    you will get acces to great intel
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">Easy to integrate in your websites and landing pages</div>
+                                                <div class="media-body">Easy to integrate in your
+                                                    websites and landing pages
+                                                </div>
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body">The generated reports are important for your strategy</div>
+                                                <div class="media-body">The generated reports are
+                                                    important for your strategy
+                                                </div>
                                             </li>
                                         </ul>
-                                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-3">LIGHTBOX</a>
+                                        <a class="btn-solid-reg popup-with-move-anim"
+                                           href="#details-lightbox-3">LIGHTBOX</a>
                                     </div> <!-- end of text-container -->
                                 </div> <!-- end of col -->
                             </div> <!-- end of row -->
@@ -269,7 +319,7 @@
 
     <!-- Details Lightboxes -->
     <!-- Details Lightbox 1 -->
-	<div id="details-lightbox-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div id="details-lightbox-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
         <div class="container">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
@@ -282,28 +332,36 @@
                     <h3>List Building</h3>
                     <hr>
                     <h5>Core service</h5>
-                    <p>It's very easy to start using Tivo. You just need to fill out and submit the Sign Up Form and you will receive access to the app.</p>
+                    <p>It's very easy to start using Tivo. You just need to fill out and submit the
+                        Sign Up Form and you will receive access to the app.</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">List building framework</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">List building framework</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Easy database browsing</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Easy database browsing</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">User administration</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">User administration</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Automate user signup</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Automate user signup</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Quick formatting tools</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Quick formatting tools</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Fast email checking</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Fast email checking</div>
                         </li>
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="sign-up.blade.php">SIGN UP</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+                    <a class="btn-solid-reg mfp-close" href="sign-up.blade.php">SIGN UP</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -311,7 +369,7 @@
     <!-- end of details lightbox 1 -->
 
     <!-- Details Lightbox 2 -->
-	<div id="details-lightbox-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div id="details-lightbox-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
         <div class="container">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
@@ -324,28 +382,36 @@
                     <h3>Campaign Monitoring</h3>
                     <hr>
                     <h5>Core service</h5>
-                    <p>It's very easy to start using Tivo. You just need to fill out and submit the Sign Up Form and you will receive access to the app.</p>
+                    <p>It's very easy to start using Tivo. You just need to fill out and submit the
+                        Sign Up Form and you will receive access to the app.</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">List building framework</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">List building framework</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Easy database browsing</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Easy database browsing</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">User administration</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">User administration</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Automate user signup</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Automate user signup</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Quick formatting tools</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Quick formatting tools</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Fast email checking</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Fast email checking</div>
                         </li>
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="sign-up.blade.php">SIGN UP</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+                    <a class="btn-solid-reg mfp-close" href="sign-up.blade.php">SIGN UP</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -353,7 +419,7 @@
     <!-- end of details lightbox 2 -->
 
     <!-- Details Lightbox 3 -->
-	<div id="details-lightbox-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div id="details-lightbox-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
         <div class="container">
             <div class="row">
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
@@ -366,28 +432,36 @@
                     <h3>Analytics Tools</h3>
                     <hr>
                     <h5>Core service</h5>
-                    <p>It's very easy to start using Tivo. You just need to fill out and submit the Sign Up Form and you will receive access to the app.</p>
+                    <p>It's very easy to start using Tivo. You just need to fill out and submit the
+                        Sign Up Form and you will receive access to the app.</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">List building framework</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">List building framework</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Easy database browsing</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Easy database browsing</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">User administration</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">User administration</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Automate user signup</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Automate user signup</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Quick formatting tools</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Quick formatting tools</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Fast email checking</div>
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Fast email checking</div>
                         </li>
                     </ul>
-                    <a class="btn-solid-reg mfp-close" href="sign-up.blade.php">SIGN UP</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+                    <a class="btn-solid-reg mfp-close" href="sign-up.blade.php">SIGN UP</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -403,15 +477,21 @@
                 <div class="col-lg-6">
                     <div class="text-container">
                         <h2>Now Is The Time To Upgrade Your Marketing Solution</h2>
-                        <p>Target the right customers for your business with the help of Tivo's patented segmentation technology and deploy efficient marketing campaigns. Keep your customers happy and loyal.</p>
+                        <p>Target the right customers for your business with the help of Tivo's
+                            patented segmentation technology and deploy efficient marketing
+                            campaigns. Keep your customers happy and loyal.</p>
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Understand customers and meet their requirements</div>
+                                <div class="media-body">Understand customers and meet their
+                                    requirements
+                                </div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Targeted client base with Tivo's efficient technology</div>
+                                <div class="media-body">Targeted client base with Tivo's efficient
+                                    technology
+                                </div>
                             </li>
                         </ul>
                         <a class="btn-solid-reg page-scroll" href="sign-up.blade.php">SIGN UP</a>
@@ -437,8 +517,11 @@
                     <!-- Video Preview -->
                     <div class="image-container">
                         <div class="video-wrapper">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=fLCjQJCekTs" data-effect="fadeIn">
-                                <img class="img-fluid" src="images/video-image.png" alt="alternative">
+                            <a class="popup-youtube"
+                               href="https://www.youtube.com/watch?v=fLCjQJCekTs"
+                               data-effect="fadeIn">
+                                <img class="img-fluid" src="images/video-image.png"
+                                     alt="alternative">
                                 <span class="video-play-button">
                                     <span></span>
                                 </span>
@@ -447,7 +530,10 @@
                     </div> <!-- end of image-container -->
                     <!-- end of video preview -->
 
-                    <div class="p-heading">What better way to show off Tivo marketing automation saas app than presenting you some great situations of each module and tool available to users in a video</div>
+                    <div class="p-heading">What better way to show off Tivo marketing automation
+                        saas app than presenting you some great situations of each module and tool
+                        available to users in a video
+                    </div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -471,28 +557,35 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">BASIC</div>
-                            <div class="price"><span class="currency">$</span><span class="value">Free</span></div>
+                            <div class="price"><span class="currency">$</span><span class="value">Free</span>
+                            </div>
                             <div class="frequency">14 days trial</div>
                             <div class="divider"></div>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">Email Marketing Module</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">User Control Management</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">List Building And Cleaning</div>
+                                    <i class="fas fa-times"></i>
+                                    <div class="media-body">List Building And Cleaning</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Collected Data Reports</div>
+                                    <i class="fas fa-times"></i>
+                                    <div class="media-body">Collected Data Reports</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Planning And Evaluation</div>
+                                    <i class="fas fa-times"></i>
+                                    <div class="media-body">Planning And Evaluation</div>
                                 </li>
                             </ul>
                             <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.blade.php">SIGN UP</a>
+                                <a class="btn-solid-reg page-scroll" href="sign-up.blade.php">SIGN
+                                    UP</a>
                             </div>
                         </div>
                     </div> <!-- end of card -->
@@ -502,28 +595,35 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">ADVANCED</div>
-                            <div class="price"><span class="currency">$</span><span class="value">29.99</span></div>
+                            <div class="price"><span class="currency">$</span><span class="value">29.99</span>
+                            </div>
                             <div class="frequency">monthly</div>
                             <div class="divider"></div>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">Email Marketing Module</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">User Control Management</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">List Building And Cleaning</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">List Building And Cleaning</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Collected Data Reports</div>
+                                    <i class="fas fa-times"></i>
+                                    <div class="media-body">Collected Data Reports</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-times"></i><div class="media-body">Planning And Evaluation</div>
+                                    <i class="fas fa-times"></i>
+                                    <div class="media-body">Planning And Evaluation</div>
                                 </li>
                             </ul>
                             <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.blade.php">SIGN UP</a>
+                                <a class="btn-solid-reg page-scroll" href="sign-up.blade.php">SIGN
+                                    UP</a>
                             </div>
                         </div>
                     </div> <!-- end of card -->
@@ -536,28 +636,35 @@
                         </div> -->
                         <div class="card-body">
                             <div class="card-title">COMPLETE</div>
-                            <div class="price"><span class="currency">$</span><span class="value">39.99</span></div>
+                            <div class="price"><span class="currency">$</span><span class="value">39.99</span>
+                            </div>
                             <div class="frequency">monthly</div>
                             <div class="divider"></div>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Email Marketing Module</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">Email Marketing Module</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">User Control Management</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">User Control Management</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">List Building And Cleaning</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">List Building And Cleaning</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Collected Data Reports</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">Collected Data Reports</div>
                                 </li>
                                 <li class="media">
-                                    <i class="fas fa-check"></i><div class="media-body">Planning And Evaluation</div>
+                                    <i class="fas fa-check"></i>
+                                    <div class="media-body">Planning And Evaluation</div>
                                 </li>
                             </ul>
                             <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="sign-up.blade.php">SIGN UP</a>
+                                <a class="btn-solid-reg page-scroll" href="sign-up.blade.php">SIGN
+                                    UP</a>
                             </div>
                         </div>
                     </div> <!-- end of card -->
@@ -584,11 +691,20 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="image-wrapper">
-                                        <img class="img-fluid" src="images/testimonial-1.jpg" alt="alternative">
+                                        <img class="img-fluid" src="images/testimonial-1.jpg"
+                                             alt="alternative">
                                     </div> <!-- end of image-wrapper -->
                                     <div class="text-wrapper">
-                                        <div class="testimonial-text">I started to use Tivo with the free trial about a year ago and never stopped since then. It does all the repeating marketing tasks and allows me to focus on core development activities like new product research and design. I love it and recommend it to everyone.</div>
-                                        <div class="testimonial-author">Jude Thorn - Online Marketer</div>
+                                        <div class="testimonial-text">I started to use Tivo with the
+                                            free trial about a year ago and never stopped since
+                                            then. It does all the repeating marketing tasks and
+                                            allows me to focus on core development activities like
+                                            new product research and design. I love it and recommend
+                                            it to everyone.
+                                        </div>
+                                        <div class="testimonial-author">Jude Thorn - Online
+                                            Marketer
+                                        </div>
                                     </div> <!-- end of text-wrapper -->
                                 </div> <!-- end of swiper-slide -->
                                 <!-- end of slide -->
@@ -596,10 +712,17 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="image-wrapper">
-                                        <img class="img-fluid" src="images/testimonial-2.jpg" alt="alternative">
+                                        <img class="img-fluid" src="images/testimonial-2.jpg"
+                                             alt="alternative">
                                     </div> <!-- end of image-wrapper -->
                                     <div class="text-wrapper">
-                                        <div class="testimonial-text">Awesome features for the money. I never thought such a low ammount of money would bring me so many leads per month. Before Tivo I used the services of an agency which cost 10x more and delivered far less. Highly recommended to marketers focused on results.</div>
+                                        <div class="testimonial-text">Awesome features for the
+                                            money. I never thought such a low ammount of money would
+                                            bring me so many leads per month. Before Tivo I used the
+                                            services of an agency which cost 10x more and delivered
+                                            far less. Highly recommended to marketers focused on
+                                            results.
+                                        </div>
                                         <div class="testimonial-author">Roy Smith - Developer</div>
                                     </div> <!-- end of text-wrapper -->
                                 </div> <!-- end of swiper-slide -->
@@ -608,11 +731,20 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="image-wrapper">
-                                        <img class="img-fluid" src="images/testimonial-3.jpg" alt="alternative">
+                                        <img class="img-fluid" src="images/testimonial-3.jpg"
+                                             alt="alternative">
                                     </div> <!-- end of image-wrapper -->
                                     <div class="text-wrapper">
-                                        <div class="testimonial-text">Tivo is the best marketing automation app for small and medium sized business. It understands the mindset of young entrepreneurs and provides the necessary data for wise marketing decisions. Just give it a try and you will definitely not regret spending your time.</div>
-                                        <div class="testimonial-author">Marsha Singer - Online Marketer</div>
+                                        <div class="testimonial-text">Tivo is the best marketing
+                                            automation app for small and medium sized business. It
+                                            understands the mindset of young entrepreneurs and
+                                            provides the necessary data for wise marketing
+                                            decisions. Just give it a try and you will definitely
+                                            not regret spending your time.
+                                        </div>
+                                        <div class="testimonial-author">Marsha Singer - Online
+                                            Marketer
+                                        </div>
                                     </div> <!-- end of text-wrapper -->
                                 </div> <!-- end of swiper-slide -->
                                 <!-- end of slide -->
@@ -620,11 +752,20 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="image-wrapper">
-                                        <img class="img-fluid" src="images/testimonial-4.jpg" alt="alternative">
+                                        <img class="img-fluid" src="images/testimonial-4.jpg"
+                                             alt="alternative">
                                     </div> <!-- end of image-wrapper -->
                                     <div class="text-wrapper">
-                                        <div class="testimonial-text">Tivo is one of the greatest marketing automation apps out there. I especially love the Reporting Tools module because it gives me such a great amount of information based on little amounts of input gathered in just few weeks of light weight usage. Recommended!</div>
-                                        <div class="testimonial-author">Ronda Louis - Online Marketer</div>
+                                        <div class="testimonial-text">Tivo is one of the greatest
+                                            marketing automation apps out there. I especially love
+                                            the Reporting Tools module because it gives me such a
+                                            great amount of information based on little amounts of
+                                            input gathered in just few weeks of light weight usage.
+                                            Recommended!
+                                        </div>
+                                        <div class="testimonial-author">Ronda Louis - Online
+                                            Marketer
+                                        </div>
                                     </div> <!-- end of text-wrapper -->
                                 </div> <!-- end of swiper-slide -->
                                 <!-- end of slide -->
@@ -664,11 +805,15 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group checkbox">
-                                <input type="checkbox" id="nterms" value="Agreed-to-Terms" required>I've read and agree to Tivo's written <a href="privacy-policy.blade.php">Privacy Policy</a> and <a href="terms-conditions.blade.php">Terms Conditions</a>
+                                <input type="checkbox" id="nterms" value="Agreed-to-Terms" required>I've
+                                read and agree to Tivo's written <a href="privacy-policy.blade.php">Privacy
+                                    Policy</a> and <a href="terms-conditions.blade.php">Terms
+                                    Conditions</a>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">SUBSCRIBE</button>
+                                <button type="submit" class="form-control-submit-button">SUBSCRIBE
+                                </button>
                             </div>
                             <div class="form-message">
                                 <div id="nmsgSubmit" class="h3 text-center hidden"></div>
@@ -718,8 +863,7 @@
         </div> <!-- end of container -->
     </div> <!-- end of form -->
     <!-- end of newsletter -->
-@yield('footer')
-
+    @yield('footer')
 
 @endsection
 

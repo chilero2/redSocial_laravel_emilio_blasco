@@ -15,17 +15,17 @@ class Image extends Model
 
 //    Relación uno a muchos - Una imagen puede tener más de un comentario
     public function comments(): HasMany {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'id');
     }
 
 //    Relación uno a muchos - Una imagen puede tener más de un like
     public function likes(): HasMany {
-        return $this->hasMany(Like::class);
+        return $this->hasMany(Like::class, 'id');
     }
 
 //    Relación muchos a uno - Un usuario puede crear muchas imágenes
     public function user(): BelongsTo {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id');
     }
 
 }

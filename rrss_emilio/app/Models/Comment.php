@@ -15,11 +15,11 @@ class Comment extends Model
 
     // Relación uno a muchos - Un usuario puede tener muchos comentarios
     public function users(): BelongsTo {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id');
     }
 
     // Relación uno a muchos - Una imagen puede tener muchos comentarios
     public function images(): BelongsTo {
-        return $this->belongsTo(Image::class);
+        return $this->belongsTo(Image::class, 'id');
     }
 }

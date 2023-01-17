@@ -18,8 +18,8 @@
          * @return array<string, mixed>
          */
         public function definition(): array {
-            $user_id      = User::all('id_user')->random()->id_user;
-            $date         = User::all('created_at')->where('id_user', '=', $user_id);
+            $user_id      = User::all('id')->random()->id;
+            $date         = User::all('created_at')->where('id', '=', $user_id);
             $date_created = fake()->dateTimeBetween($date, 'now');
             return [
                 'id_user'     => $user_id,

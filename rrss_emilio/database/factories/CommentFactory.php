@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
+ * @extends Factory<Comment>
  */
 class CommentFactory extends Factory
 {
@@ -19,9 +19,9 @@ class CommentFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array {
-        $user_id = User::all('id_user')->random()->id_user;
-        $image_id = Image::all('id_image')->random()->id_image;
-        $date = Image::all('created_at')->where('id_image', '=', $image_id);
+        $user_id = User::all('id')->random()->id;
+        $image_id = Image::all('id')->random()->id;
+        $date = Image::all('created_at')->where('id', '=', $image_id);
         $date_created = fake()->dateTimeBetween($date, 'now');
         return [
             'id_user' => $user_id,

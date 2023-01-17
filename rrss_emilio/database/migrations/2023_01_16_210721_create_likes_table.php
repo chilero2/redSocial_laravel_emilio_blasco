@@ -11,16 +11,15 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(): void {
         Schema::create('likes', function (Blueprint $table) {
-            $table->id('id_like');
+            $table->id();
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_image');
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_image')->references('id')->on('images');
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id_user')->on('users');
-            $table->foreign('id_image')->references('id_image')->on('images');
 
         });
     }
