@@ -116,6 +116,16 @@
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/pragmarx/google2fa" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/jenssegers/agent" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/jaybizzle/crawler-detect" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/jetstream" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/fortify" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/mobiledetect/mobiledetectlib" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/livewire/livewire" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

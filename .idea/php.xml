@@ -110,6 +110,16 @@
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/livewire/livewire" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
