@@ -2,27 +2,33 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends Factory<\App\Models\User>
  */
 class UserFactory extends Factory
 {
+    protected $model = User::class;
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-    public function definition()
-    {
+    public function definition(): array {
+        $date = fake()->dateTimeBetween('-2 year', 'now');
         return [
+            'role' => fake()->randomElement(['administrador', 'cliente']),
             'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'surname' => fake()->firstName(), // password
+            'user_name' => fake()->userName(),
+            'email' => fake()->email(),
+            'password' => fake()->password(),
+            'image' => 'example.png',
+            'create_at' => $date,
+            'updated_ad' => fake()->dateTimeBetween($date, 'now')
         ];
     }
 
