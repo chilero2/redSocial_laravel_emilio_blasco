@@ -26,9 +26,9 @@ class UserFactory extends Factory
             'user_name' => fake()->userName(),
             'email' => fake()->email(),
             'password' => fake()->password(),
-            'image' => 'example.png',
-            'create_at' => $date,
-            'updated_ad' => fake()->dateTimeBetween($date, 'now')
+            'image' => fake()->imageUrl(400, 400, 'cats', true),
+            'created_at' => $date,
+            'updated_at' => fake()->dateTimeBetween($date, 'now')
         ];
     }
 
