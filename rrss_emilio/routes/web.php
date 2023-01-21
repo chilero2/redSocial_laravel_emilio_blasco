@@ -16,7 +16,7 @@
     Route::get('/', 'RedSocialController@index')->name('pages.index');
 
 
-    Route::get('/log-in', 'RedSocialController@login')->name('pages.log-in');
+//    Route::get('/log-in', 'RedSocialController@login')->name('pages.log-in');
 
 
 Route::middleware([

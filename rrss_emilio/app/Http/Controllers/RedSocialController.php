@@ -16,7 +16,7 @@ class RedSocialController extends Controller
         return view('pages.welcome', ['images' => $images]);
     }
 
-    public function login() {
-        return view('pages.log-in');
-    }
+//    public function login() {
+//        return view('pages.log-in');
+//    }
 }
