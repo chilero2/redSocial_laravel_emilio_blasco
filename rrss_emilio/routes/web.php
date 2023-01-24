@@ -25,9 +25,7 @@
                           'verified',
                       ])->group(function () {
         Route::prefix('dashboard')->group(function () {
-            Route::get('', function () {
-                return view('dashboard');
-            })->name('dashboard');
+            Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
             Route::get('form-upload-image', [\App\Http\Controllers\ImageController::class, 'upload'])->name('form-upload-image');
             Route::post('saveImage', [\App\Http\Controllers\ImageController::class, 'saveImage'])->name('saveImage');

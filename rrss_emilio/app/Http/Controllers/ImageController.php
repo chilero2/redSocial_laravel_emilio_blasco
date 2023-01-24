@@ -32,7 +32,7 @@ class ImageController extends Controller
             $image_path_name = time().$image_path->getClientOriginalName();
 
             Storage::disk('images_rrss')->put($image_path_name, File::get($image_path));
-            $image->image_path = $image_path;
+            $image->image_path = $image_path_name;
         }
         $image->save();
 
@@ -40,6 +40,8 @@ class ImageController extends Controller
     }
 
     public function show_images() {
+
+
         return view('page.show-images');
     }
 

@@ -12,6 +12,16 @@
                     <li><a href="{{route('form-upload-image')}}">Subir imágen</a></li>
                 </ul>
             </div>
+
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-3">
+                @foreach($images as $image)
+                    {{$image->user->name . ' ' . $image->user->surname}}
+                    {{$image->description}} <br>
+                    <img src="{{asset('images_rrss/'. $image->image_path)}}" alt=""/>
+                @endforeach
+            </div>
+
+
         </div>
     </div>
 </x-app-layout>
