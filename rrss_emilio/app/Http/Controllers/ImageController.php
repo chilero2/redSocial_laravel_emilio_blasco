@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -22,10 +23,10 @@ class ImageController extends Controller
 
         $image_path = $request->file('image');
         $titulo = $request->input('description');
-        $user = \Auth::user();
+        $user = Auth::id();
 
         $image = new Image();
-        $image->id_user = $user->id;
+        $image->id_user = $user;
         $image->description = $titulo;
 
         if($image_path) {

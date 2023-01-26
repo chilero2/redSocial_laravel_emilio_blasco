@@ -14,11 +14,11 @@ class Like extends Model
 
     // Relación muchos a uno - Una imagen puede tener muchos likes
     public function image(): BelongsTo {
-        return $this->belongsTo(Image::class, 'id');
+        return $this->belongsTo(Image::class, 'id_image');
     }
 
     // Relación muchos a uno - Un usuario puede tener muchos likes
     public function user(): BelongsTo {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'id_user');
     }
 }
