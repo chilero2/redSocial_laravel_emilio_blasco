@@ -56,10 +56,10 @@
                 'throw'                   => false,
             ],
 
-            'images_rrss' => [
+            'images_casa' => [
                 'driver'     => 'local',
-                'root'       => storage_path('app/images_rrss'),
-                'url'        => env('APP_URL') . '/images_rrss',
+                'root'       => storage_path('app/images_casa'),
+                'url'        => env('APP_URL') . '/images_casa',
                 'visibility' => 'public',
                 'throw'      => false,
             ],
@@ -78,8 +78,8 @@
         */
 
         'links' => [
-            public_path('storage') => storage_path('app/public'),
-            public_path('images_rrss') => storage_path('app/images_rrss'),
+//            public_path('storage') => storage_path('app/public'),
+            public_path('images_casa') => storage_path('app/images_casa'),
         ],
 
     ];

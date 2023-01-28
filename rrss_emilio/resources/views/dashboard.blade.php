@@ -17,7 +17,7 @@
                 @foreach($images as $image)
                     {{$image->user->name}}
                     {{$image->description}} <br>
-                    <img src="{{asset('images_rrss/'. $image->image_path)}}" alt=""/>
+                    <img src="{{asset('images_casa/'. $image->image_path)}}" alt=""/>
 
                     <p>{{ $carbon->parse($image->created_at)->longAbsoluteDiffForHumans()}}</p>
                 @endforeach

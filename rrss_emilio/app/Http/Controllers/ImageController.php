@@ -32,7 +32,7 @@ class ImageController extends Controller
         if($image_path) {
             $image_path_name = time().$image_path->getClientOriginalName();
 
-            Storage::disk('images_rrss')->put($image_path_name, File::get($image_path));
+            Storage::disk('images_casa')->put($image_path_name, File::get($image_path));
             $image->image_path = $image_path_name;
         }
         $image->save();
