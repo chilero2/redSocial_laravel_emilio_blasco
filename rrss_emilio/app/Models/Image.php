@@ -14,7 +14,7 @@ class Image extends Model
     protected $table= 'images';
 
 //    Relación uno a muchos - Una imagen puede tener más de un comentario
-    public function comments() {
+    public function comments(): HasMany {
         return $this->hasMany(Comment::class);
     }
 
@@ -25,7 +25,7 @@ class Image extends Model
 
 //    Relación muchos a uno - Un usuario puede crear muchas imágenes
     public function user() {
-        return $this->belongsTo(User::class, 'id_user');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 }

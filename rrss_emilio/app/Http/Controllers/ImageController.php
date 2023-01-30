@@ -26,7 +26,7 @@ class ImageController extends Controller
         $user = Auth::id();
 
         $image = new Image();
-        $image->id_user = $user;
+        $image->user_id = $user;
         $image->description = $titulo;
 
         if($image_path) {

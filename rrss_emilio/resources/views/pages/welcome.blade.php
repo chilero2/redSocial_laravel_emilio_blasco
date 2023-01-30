@@ -110,14 +110,14 @@
                                 <img class="img-fluid" src="{{$image->image_path}}"
                                      alt="alternative">
                                 <p>{{\App\Models\Like::all()->where
-                                        ('id_image', $image->id)->count()}}
+                                        ('image_id', $image->id)->count()}}
                                     likes</p>
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">{{$image->description}}</h4>
                                 <p>{{$image->user->name}} {{$image->user->surname}}</p>
                                 <ul>
-                                    @foreach( \App\Models\Comment::all()->where('id_image',
+                                    @foreach( \App\Models\Comment::all()->where('image_id',
                                     $image->id) as $comment)
                                         <li>{{$comment->content}}</li>
                                     @endforeach

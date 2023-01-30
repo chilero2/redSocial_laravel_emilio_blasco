@@ -25,8 +25,8 @@
             $date         = Image::all('created_at')->where('id', '=', $image_id);
             $date_created = fake()->dateTimeBetween($date, 'now');
             return [
-                'id_user'    => $user_id,
-                'id_image'   => $image_id,
+                'user_id'    => $user_id,
+                'image_id'   => $image_id,
                 'created_at' => $date_created,
                 'updated_at' => fake()->dateTimeBetween($date_created, 'now'),
             ];

@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers;
 
+    use App\Models\Comment;
     use App\Models\Image;
     use Carbon\Carbon;
     use Illuminate\Http\Request;
@@ -9,8 +10,10 @@
 
     class DashboardController extends Controller {
         public function index() {
-            $images = Image::orderBy('id', 'desc')->paginate(3);
+            Carbon::setLocale('ES');
+            $images = Image::orderBy('id', 'desc')->paginate(1);
             $carbon = new Carbon();
+//            $comments = Comment::all();
 
 
             return view('dashboard', ['images'=>$images, 'carbon'=>$carbon]);

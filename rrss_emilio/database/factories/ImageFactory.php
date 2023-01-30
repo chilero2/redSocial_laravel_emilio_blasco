@@ -22,7 +22,7 @@
             $date         = User::all('created_at')->where('id', '=', $user_id);
             $date_created = fake()->dateTimeBetween($date, 'now');
             return [
-                'id_user'     => $user_id,
+                'user_id'     => $user_id,
                 'image_path'  => fake()->imageUrl(640, 480, 'cats', true),
                 'description' => fake()->sentence(12),
                 'created_at'  => $date_created,

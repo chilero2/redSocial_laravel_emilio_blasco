@@ -29,6 +29,7 @@
 
             Route::get('form-upload-image', [\App\Http\Controllers\ImageController::class, 'upload'])->name('form-upload-image');
             Route::post('saveImage', [\App\Http\Controllers\ImageController::class, 'saveImage'])->name('saveImage');
+            Route::post('saveComment', [\App\Http\Controllers\CommentController::class, 'saveComment'])->name('saveComment');
 
         });
 

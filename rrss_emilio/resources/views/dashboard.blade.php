@@ -20,6 +20,35 @@
                     <img src="{{asset('images_rrss/'. $image->image_path)}}" alt=""/>
 
                     <p>{{ $carbon->parse($image->created_at)->longAbsoluteDiffForHumans()}}</p>
+
+                <div>
+
+
+                    <p>{{count($image->comments)}}</p>
+
+
+                </div>
+
+                    <form method="POST" action="{{route('saveComment')}}">
+                        @csrf
+                        <div>
+                            <x-jet-label for="comment" value="{{ __('Comentario') }}"/>
+                            <textarea name="comment" id="comment" cols="30" rows="10"
+                                      class="block w-full"></textarea>
+                            <input type="hidden" name="user_id" value="{{$image->user_id}}">
+                            <input type="hidden" name="image_id" value="{{$image->id}}">
+                        </div>
+
+
+                        <div class="flex items-center justify-end mt-4">
+
+                            <x-jet-button class="ml-4">
+                                {{ __('Subir comentario') }}
+                            </x-jet-button>
+                        </div>
+
+                    </form>
+
                 @endforeach
             </div>
             {{$images->links()}}
