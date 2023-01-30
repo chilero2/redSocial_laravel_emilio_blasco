@@ -20,7 +20,11 @@ class CommentController extends Controller
         $comment->save();
 
         return redirect()->route('dashboard');
-
+    }
+    public function deleteComment(Request $request) {
+        Comment::find($request->input('comment_id'))->delete();
+        $url = $request->input('image_id');
+        return redirect()->route('show_comments', ['image_id' => $url]);
 
     }
 }

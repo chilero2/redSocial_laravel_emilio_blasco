@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-3">
                 <ul>
-                    <li><a href="{{route('form-upload-image')}}">Subir imágen</a></li>
+                    <li><a href="{{route('form-upload-image')}}">Subir imagen</a></li>
                 </ul>
             </div>
 
@@ -24,7 +24,11 @@
                 <div>
 
 
-                    <p>{{count($image->comments)}}</p>
+                    <p>Número de comentarios: {{count($image->comments)}}
+                        <a href="{{route('show_comments', ['image_id' => $image->id])}}">Ver
+                            comentarios</a>
+
+                    </p>
 
 
                 </div>

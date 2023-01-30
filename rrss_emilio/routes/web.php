@@ -26,7 +26,9 @@
                       ])->group(function () {
         Route::prefix('dashboard')->group(function () {
             Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-
+            Route::get('/{image_id}', [\App\Http\Controllers\ImageController::class, 'show_comments'])->name('show_comments');
+            Route::delete('deleteComment', [\App\Http\Controllers\CommentController::class, 'deleteComment'])->name
+            ('deleteComment');
             Route::get('form-upload-image', [\App\Http\Controllers\ImageController::class, 'upload'])->name('form-upload-image');
             Route::post('saveImage', [\App\Http\Controllers\ImageController::class, 'saveImage'])->name('saveImage');
             Route::post('saveComment', [\App\Http\Controllers\CommentController::class, 'saveComment'])->name('saveComment');
