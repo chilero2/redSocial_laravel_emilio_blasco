@@ -25,7 +25,7 @@
 
 
                     <p>Número de comentarios: {{count($image->comments)}}
-                        <a href="{{route('show_comments', ['image_id' => $image->id])}}">Ver
+                        <a href="{{route('show_image', ['image_id' => $image->id])}}">Ver
                             comentarios</a>
 
                     </p>

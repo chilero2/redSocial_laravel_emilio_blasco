@@ -24,7 +24,7 @@ class CommentController extends Controller
     public function deleteComment(Request $request) {
         Comment::find($request->input('comment_id'))->delete();
         $url = $request->input('image_id');
-        return redirect()->route('show_comments', ['image_id' => $url]);
+        return redirect()->route('show_image', ['image_id' => $url]);
 
     }
 }

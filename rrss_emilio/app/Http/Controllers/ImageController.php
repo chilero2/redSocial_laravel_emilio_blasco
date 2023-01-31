@@ -15,7 +15,7 @@
 
 
     class ImageController extends Controller {
-        public function upload(): Factory|View|Application {
+        public function upload() {
             return view('pages.form-upload-image');
         }
 
@@ -40,18 +40,17 @@
             return redirect()->route('dashboard');
         }
 
-        public function show_images() {
+                public function show_images() {
 
+                    return view('page.dashboard');
+                }
 
-            return view('page.show-images');
-        }
-
-        public function show_comments($image_id) {
-            $image  = Image::find($image_id);
+        public function show_image($image_id) {
+            $image = Image::find($image_id);
             Carbon::setLocale('ES');
             $carbon = new Carbon();
 
-            return view('pages.show_image', ['image' => $image, 'carbon'=> $carbon]);
+            return view('pages.show_image', ['image' => $image, 'carbon' => $carbon]);
 
         }
 
