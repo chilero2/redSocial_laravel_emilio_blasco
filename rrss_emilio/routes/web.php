@@ -24,17 +24,16 @@
                           config('jetstream.auth_session'),
                           'verified',
                       ])->group(function () {
+
         Route::prefix('dashboard')->group(function () {
             Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
             Route::get('form-upload-image', [\App\Http\Controllers\ImageController::class, 'upload'])->name('form-upload-image');
             Route::get('show_image/{image_id}', [\App\Http\Controllers\ImageController::class, 'show_image'])->name('show_image');
-
-            Route::delete('deleteComment', [\App\Http\Controllers\CommentController::class, 'deleteComment'])->name
-            ('deleteComment');
+            Route::delete('deleteComment', [\App\Http\Controllers\CommentController::class, 'deleteComment'])->name('deleteComment');
             Route::post('saveImage', [\App\Http\Controllers\ImageController::class, 'saveImage'])->name('saveImage');
             Route::post('saveComment', [\App\Http\Controllers\CommentController::class, 'saveComment'])->name('saveComment');
+            Route::get('perfil', [\App\Http\Controllers\DashboardController::class, 'perfil'])->name('perfil');
 
         });
-
 
     });

@@ -19,6 +19,8 @@
                                     <span class="italic text-xs">{{$carbon->parse
                                     ($comment->created_at)
                                     ->longAbsoluteDiffForHumans()}}</span>
+
+                                    @if(Auth::user()->id === $image->user_id)
                                     <form method="POST" action="{{route('deleteComment')}}">
                                         @csrf
                                         @method('DELETE')
@@ -30,6 +32,7 @@
                                         <button class="border rounded p-1 my-1 text-md"
                                                 type="submit">Borrar</button>
                                     </form>
+                                    @endif
                                 </li>
                             @endforeach
                         </ul>
