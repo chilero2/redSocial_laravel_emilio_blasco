@@ -25,12 +25,14 @@
                           'verified',
                       ])->group(function () {
 
+
         Route::prefix('dashboard')->group(function () {
             Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
             Route::get('form-upload-image', [\App\Http\Controllers\ImageController::class, 'upload'])->name('form-upload-image');
             Route::get('show_image/{image_id}', [\App\Http\Controllers\ImageController::class, 'show_image'])->name('show_image');
-            Route::get('like/{id}', [\App\Http\Controllers\LikeController::class, 'like'])->name('like');
-            Route::get('dislike/{id}', [\App\Http\Controllers\LikeController::class, 'dislike'])->name('dislike');
+            Route::post('like', [\App\Http\Controllers\LikeController::class, 'like']);
+            Route::post('dislike', [\App\Http\Controllers\LikeController::class, 'dislike']);
+            Route::post('countLikes', [\App\Http\Controllers\LikeController::class, 'countLikes']);
             Route::delete('deleteComment', [\App\Http\Controllers\CommentController::class, 'deleteComment'])->name('deleteComment');
             Route::post('saveImage', [\App\Http\Controllers\ImageController::class, 'saveImage'])->name('saveImage');
             Route::post('saveComment', [\App\Http\Controllers\CommentController::class, 'saveComment'])->name('saveComment');

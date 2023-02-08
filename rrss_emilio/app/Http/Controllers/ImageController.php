@@ -4,6 +4,7 @@
 
     use App\Models\Comment;
     use App\Models\Image;
+    use App\Models\Like;
     use Carbon\Carbon;
     use Illuminate\Contracts\Foundation\Application;
     use Illuminate\Contracts\View\Factory;
@@ -50,7 +51,8 @@
             Carbon::setLocale('ES');
             $carbon = new Carbon();
 
-            return view('pages.show_image', ['image' => $image, 'carbon' => $carbon]);
+
+            return view('pages.show_image', ['image' => $image, 'carbon' => $carbon, 'like', $like]);
 
         }
 
