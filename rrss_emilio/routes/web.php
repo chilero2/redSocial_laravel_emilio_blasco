@@ -30,6 +30,7 @@
             Route::get('', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
             Route::get('form-upload-image', [\App\Http\Controllers\ImageController::class, 'upload'])->name('form-upload-image');
             Route::get('show_image/{image_id}', [\App\Http\Controllers\ImageController::class, 'show_image'])->name('show_image');
+            Route::get('gente', [\App\Http\Controllers\UserController::class, 'gente'])->name('search');
             Route::post('like', [\App\Http\Controllers\LikeController::class, 'like']);
             Route::post('dislike', [\App\Http\Controllers\LikeController::class, 'dislike']);
             Route::post('countLikes', [\App\Http\Controllers\LikeController::class, 'countLikes']);

@@ -25,8 +25,7 @@
                     <div>
 
                         <div>
-                            @if($image->likes->where('user_id', Auth::id())->where
-                            ('image_id', $image->id)->isEmpty())
+                            @if($image->likes->where('user_id', Auth::id())->isEmpty())
                                 <svg data-id="{{$image->id}}"
                                      data-token="{{csrf_token()}}"
                                      data-user="{{Auth::id()}}"

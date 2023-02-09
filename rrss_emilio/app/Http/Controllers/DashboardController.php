@@ -15,10 +15,6 @@
             Carbon::setLocale('ES');
             $images = Image::orderBy('id', 'desc')->paginate(2);
             $carbon = new Carbon();
-//            $comments = Comment::all();
-
-
-//            $like = Like::where($image_id, $image->id)::where(Auth::user(), $image->user_id);
             return view('dashboard', ['images'=>$images, 'carbon'=>$carbon]);
         }
 
