@@ -13,7 +13,7 @@
     class DashboardController extends Controller {
         public function index() {
             Carbon::setLocale('ES');
-            $images = Image::orderBy('id', 'desc')->paginate(1);
+            $images = Image::orderBy('id', 'desc')->paginate(2);
             $carbon = new Carbon();
 //            $comments = Comment::all();
 
@@ -25,7 +25,6 @@
         public function perfil() {
             $user = Auth::user();
             $images = Image::where('user_id', $user->id)->get();
-
 
             return view('pages.perfil', ['user' => $user, 'images' => $images]);
         }
