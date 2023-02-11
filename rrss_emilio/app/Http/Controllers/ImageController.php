@@ -41,18 +41,16 @@
             return redirect()->route('dashboard');
         }
 
-                public function show_images() {
+        public function show_images() {
 
-                    return view('page.dashboard');
-                }
+            return view('page.dashboard');
+        }
 
         public function show_image($image_id) {
             $image = Image::find($image_id);
             Carbon::setLocale('ES');
             $carbon = new Carbon();
-
-
-            return view('pages.show_image', ['image' => $image, 'carbon' => $carbon, 'like', $like]);
+            return view('pages.show_image', ['image' => $image, 'carbon' => $carbon]);
 
         }
 
