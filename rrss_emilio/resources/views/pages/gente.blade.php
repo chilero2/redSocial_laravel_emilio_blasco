@@ -1,4 +1,6 @@
 <x-app-layout>
+
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Gente') }}
@@ -12,8 +14,6 @@
     </form>
 
 
-
-
     <div class="mx-8">
         @foreach($users as $user)
             <div class="my-8">
@@ -25,15 +25,27 @@
                     <li class="italic"> {{'@' . $user->username}}</li>
                     <li><a href="{{route('viewUser', ['user_id' => $user->id])}}">Ver
                             perfil</a></li>
+                    <li>
+                        @if(in_array($user, $friends))
+                            Amigo
+                        @elseif(in_array($user, $pending))
+                            Pending...
+                        @elseif(Auth::id() !== $user->id)
+                            <form method="post" action="{{route('sendFriendRequest')}}">
+                                @csrf
+                                <input type="hidden" value="{{$user->id}}" name="friend">
+                                <button class="bg-red-700 p-2 text-white rounded-md">Send friend
+                                    request
+                                </button>
+                            </form>
+
+                        @endif
+                    </li>
                 </ul>
             </div>
         @endforeach
 
     </div>
-
-
-
-
 
 
 </x-app-layout>

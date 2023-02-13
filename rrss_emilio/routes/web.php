@@ -34,6 +34,7 @@
             Route::get('viewUser/{user_id}', [\App\Http\Controllers\UserController::class, 'viewUser'])->name('viewUser');
             Route::post('search', [\App\Http\Controllers\UserController::class, 'search'])->name('search');
             Route::post('like', [\App\Http\Controllers\LikeController::class, 'like']);
+            Route::post('sendFriendRequest', [\App\Http\Controllers\UserController::class, 'sendFriendRequest'])->name('sendFriendRequest');
             Route::post('dislike', [\App\Http\Controllers\LikeController::class, 'dislike']);
             Route::post('countLikes', [\App\Http\Controllers\LikeController::class, 'countLikes']);
             Route::delete('deleteComment', [\App\Http\Controllers\CommentController::class, 'deleteComment'])->name('deleteComment');

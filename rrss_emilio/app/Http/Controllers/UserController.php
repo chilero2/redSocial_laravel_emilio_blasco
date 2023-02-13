@@ -5,11 +5,16 @@
     use App\Models\Image;
     use App\Models\User;
     use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Auth;
+
 
     class UserController extends Controller {
+
         public function gente() {
             $users = User::orderBy('name', 'asc')->get();
-            return view('pages.gente', ['users' => $users]);
+            $friends = Auth::user()->getFriends();
+            $pending = Auth::user()->getPendingFriendships();
+            return view('pages.gente', ['users' => $users, 'friends' => $friends, 'pending' => $pending]);
         }
 
         public function search(Request $request) {
@@ -22,8 +27,17 @@
         }
 
         public function viewUser($user_id) {
-            $user = User::find($user_id);
+            $user   = User::find($user_id);
             $images = Image::where('user_id', $user->id)->get();
             return view('pages.viewUser', ['user' => $user, 'images' => $images]);
         }
+
+        public function sendFriendRequest(Request $request) {
+            $f = $request->input('friend');
+            $friend = User::find($f);
+            Auth::user()->befriend($friend);
+            return $this->gente();
+        }
+
+
     }
