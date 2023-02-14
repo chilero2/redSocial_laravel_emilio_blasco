@@ -41,6 +41,7 @@
             Route::post('saveImage', [\App\Http\Controllers\ImageController::class, 'saveImage'])->name('saveImage');
             Route::post('saveComment', [\App\Http\Controllers\CommentController::class, 'saveComment'])->name('saveComment');
             Route::get('perfil', [\App\Http\Controllers\DashboardController::class, 'perfil'])->name('perfil');
+            Route::post('perfil', [\App\Http\Controllers\DashboardController::class, 'acceptFriend'])->name('acceptFriend');
 
         });
 

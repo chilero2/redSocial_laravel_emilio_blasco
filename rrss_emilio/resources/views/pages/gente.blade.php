@@ -26,11 +26,14 @@
                     <li><a href="{{route('viewUser', ['user_id' => $user->id])}}">Ver
                             perfil</a></li>
                     <li>
-                        @if(in_array($user, $friends))
+                        @if($friends->find($user->id))
                             Amigo
-                        @elseif(in_array($user, $pending))
+                        @elseif($pending->where('recipient_id', $user->id)->count() > 0)
+                            @if(Auth::id() !== $pending->where('recipient_id', $user->id)->first
+                            ()->id)
                             Pending...
-                        @elseif(Auth::id() !== $user->id)
+                            @endif
+                        @elseif(Auth::user()->id !== $user->id)
                             <form method="post" action="{{route('sendFriendRequest')}}">
                                 @csrf
                                 <input type="hidden" value="{{$user->id}}" name="friend">
@@ -38,7 +41,6 @@
                                     request
                                 </button>
                             </form>
-
                         @endif
                     </li>
                 </ul>

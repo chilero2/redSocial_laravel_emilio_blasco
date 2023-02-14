@@ -12,6 +12,46 @@
                 Auth::user()
                 ->name }}">
                 <p>{{ Auth::user()->name }}</p>
+
+                <div>
+                    <h2 class="font-bold text-lg">Solicitud de amistad</h2>
+                    @foreach($pending as $friend)
+                        @if($friend->recipient_id === Auth::id())
+                            <form action="{{route('acceptFriend')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="friend"
+                                       value="{{$friend->sender_id}}">
+                                <x-jet-button class="bg-blue-600">Aceptar {{$users->where('id',
+                            $friend->sender_id)
+                            ->first()->username
+                            }}</x-jet-button>
+                            </form>
+
+                            <x-jet-button class="bg-red-900">Denegar {{$users->where('id',
+                            $friend->sender_id)
+                            ->first()->username
+                            }}</x-jet-button>
+
+                        @endif
+
+                        @if($friend->sender_id === Auth::id())
+                            <form>
+                                @csrf
+                                <input type="hidden" name="friend"
+                                       value="{{$friend->recipient_id}}">
+                                <x-jet-button>Cancelar Solicitud {{$users->where('id',
+                            $friend->recipient_id)
+                            ->first()->username
+                            }}</x-jet-button>
+
+                            </form>
+
+                        @endif
+
+                    @endforeach
+
+
+                </div>
             </div>
 
             <div class="flex flex-col gap-4">

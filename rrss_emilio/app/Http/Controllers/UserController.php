@@ -11,7 +11,7 @@
     class UserController extends Controller {
 
         public function gente() {
-            $users = User::orderBy('name', 'asc')->get();
+            $users   = User::orderBy('name', 'asc')->get();
             $friends = Auth::user()->getFriends();
             $pending = Auth::user()->getPendingFriendships();
             return view('pages.gente', ['users' => $users, 'friends' => $friends, 'pending' => $pending]);
@@ -33,11 +33,13 @@
         }
 
         public function sendFriendRequest(Request $request) {
-            $f = $request->input('friend');
+            $f      = $request->input('friend');
             $friend = User::find($f);
             Auth::user()->befriend($friend);
             return $this->gente();
         }
+
+
 
 
     }
