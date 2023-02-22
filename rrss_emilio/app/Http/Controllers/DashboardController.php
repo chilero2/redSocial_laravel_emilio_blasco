@@ -22,19 +22,12 @@
         public function perfil() {
             $user    = Auth::user();
             $images  = Image::where('user_id', $user->id)->get();
-            $pending = Auth::user()->getPendingFriendships();
-            $users    = User::orderBy('id', 'desc');
+            $friends = Auth::user()->getFriends();
 
-            return view('pages.perfil', ['user' => $user, 'images' => $images, 'pending' => $pending, 'users' =>
-                $users]);
+            return view('pages.perfil', ['user' => $user, 'images' => $images, 'friends' => $friends]);
         }
 
-        public function acceptFriend(Request $request) {
-            $f = $request->input('friend');
-            $friend = User::find($f);
-            Auth::user()->acceptFriendRequest($friend);
-            return $this->perfil();
-        }
+
 
 
     }

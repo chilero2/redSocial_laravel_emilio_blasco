@@ -77,7 +77,6 @@
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/rrss_emilio/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/symfony/polyfill-uuid" />
@@ -120,6 +119,9 @@
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/laravel/fortify" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/mobiledetect/mobiledetectlib" />
       <path value="$PROJECT_DIR$/rrss_emilio/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/hootlex/laravel-friendships" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/rrss_emilio/vendor/guzzlehttp/uri-template" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

@@ -39,6 +39,20 @@
             return $this->gente();
         }
 
+        public function acceptFriend(Request $request) {
+            $f = $request->input('acceptFriend');
+            $friend = User::find($f);
+            Auth::user()->acceptFriendRequest($friend);
+            return $this->gente();
+        }
+
+        public function denyFriend(Request $request) {
+            $f = $request->input('denyFriend');
+            $friend = User::find($f);
+            Auth::user()->denyFriendRequest($friend);
+            return $this->gente();
+        }
+
 
 
 

@@ -14,8 +14,10 @@
     </form>
 
 
+
     <div class="mx-8">
         @foreach($users as $user)
+            @if(Auth::user()->id !== $user->id)
             <div class="my-8">
                 <ul class="flex items-center gap-6">
                     <li><img class="w-14 h-14 object-cover rounded-full" src="{{asset('storage/'
@@ -26,14 +28,26 @@
                     <li><a href="{{route('viewUser', ['user_id' => $user->id])}}">Ver
                             perfil</a></li>
                     <li>
-                        @if($friends->find($user->id))
+                        @if(Auth::user()->isFriendWith($user))
                             Amigo
-                        @elseif($pending->where('recipient_id', $user->id)->count() > 0)
-                            @if(Auth::id() !== $pending->where('recipient_id', $user->id)->first
-                            ()->id)
+                        @elseif(Auth::user()->hasSentFriendRequestTo($user))
                             Pending...
-                            @endif
-                        @elseif(Auth::user()->id !== $user->id)
+                        @elseif(Auth::user()->hasFriendRequestFrom($user))
+                            <div class="flex gap-4">
+                            <form action="{{route('acceptFriend')}}" method="post">
+                                @csrf
+                                <input type="hidden" value="{{$user->id}}" name="acceptFriend">
+                                <button class="bg-blue-700 p-2 text-white rounded-md">Acept
+                                </button>
+                            </form>
+                            <form action="{{route('denyFriend')}}" method="post">
+                                @csrf
+                                <input type="hidden" value="{{$user->id}}" name="denyFriend">
+                                <button class="bg-red-700 p-2 text-white rounded-md">Deny
+                                </button>
+                            </form>
+                            </div>
+                        @else
                             <form method="post" action="{{route('sendFriendRequest')}}">
                                 @csrf
                                 <input type="hidden" value="{{$user->id}}" name="friend">
@@ -45,6 +59,7 @@
                     </li>
                 </ul>
             </div>
+            @endif
         @endforeach
 
     </div>

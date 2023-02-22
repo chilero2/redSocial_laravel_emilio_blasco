@@ -83,7 +83,6 @@
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/instantiator" />
-      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/deprecations" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/polyfill-uuid" />
@@ -126,6 +125,9 @@
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/laravel/fortify" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/mobiledetect/mobiledetectlib" />
       <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/hootlex/laravel-friendships" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/rrss_emilio/vendor/guzzlehttp/uri-template" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
